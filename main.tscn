@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqq12dxb0nc5j"]
+
+[ext_resource type="Texture2D" uid="uid://damqjjjfb77dr" path="res://TileMap-01.png" id="1_1er33"]
+[ext_resource type="Script" path="res://tilemap.gd" id="1_6lkfa"]
+[ext_resource type="PackedScene" uid="uid://bbaubmpd2c8hj" path="res://player.tscn" id="2_vxjj2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnfb1"]
+texture = ExtResource("1_1er33")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xb6wt"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_lnfb1")
+
+[node name="WORLD" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_xb6wt")
+cell_quadrant_size = 64
+format = 2
+script = ExtResource("1_6lkfa")
+
+[node name="Player" parent="." instance=ExtResource("2_vxjj2")]
