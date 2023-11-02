@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://damqjjjfb77dr" path="res://TileMap-01.png" id="1_1er33"]
 [ext_resource type="Script" path="res://tilemap.gd" id="1_6lkfa"]
-[ext_resource type="PackedScene" uid="uid://bbaubmpd2c8hj" path="res://player.tscn" id="2_vxjj2"]
+[ext_resource type="PackedScene" uid="uid://bi4ncv3exokwp" path="res://player.tscn" id="2_vxjj2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnfb1"]
 texture = ExtResource("1_1er33")
@@ -36,4 +36,4 @@ cell_quadrant_size = 64
 format = 2
 script = ExtResource("1_6lkfa")
 
-[node name="Player" parent="." instance=ExtResource("2_vxjj2")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_vxjj2")]

@@ -11,7 +11,7 @@ var width = 64
 var height = 64
 
 # Reference to the player character
-@onready var player = get_parent().get_node("Player")
+@onready var player = get_parent().get_node("CharacterBody2D")
 
 # List to keep track of loaded chunks
 var loaded_chunks = []

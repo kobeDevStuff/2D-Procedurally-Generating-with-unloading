@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
-const ACCEL = 2
+const SPEED = 1000.0
+const ACCEL = 1.0
 
 var input: Vector2
 
 func get_input():
-	input.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input.x = Input.get_action_strength("right") - Input.get_action_strength("ui_left")
 	input.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	return input.normalized()
 
@@ -17,4 +16,3 @@ func _process(delta):
 	velocity = lerp(velocity, playerInput * SPEED, delta * ACCEL)
 	
 	move_and_slide()
-
