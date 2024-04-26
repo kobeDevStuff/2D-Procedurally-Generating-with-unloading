@@ -1,5 +1,5 @@
 extends Control
-
+@onready var optionsMenu = preload("res://options_menu.tscn")
 func _ready():
 	$AnimationPlayer.play("RESET")
 
@@ -22,13 +22,14 @@ func _on_resume_pressed():
 	resume()
 
 
-func _on_restart_pressed():
-	resume()
-	get_tree().reload_current_scene()
-
-
 func _on_quit_pressed():
 	get_tree().quit()
 
 func _process(delta):
 	testEsc()
+
+
+func _on_options_pressed():
+	resume()
+	get_tree().change_scene_to_file("res://options_menu.tscn")
+
