@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddd2c88itmjdq"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_ofq4o"]
+[ext_resource type="Theme" uid="uid://dg5txggifsmba" path="res://new_theme.tres" id="2_e1vwi"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_ofq4o")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.154876, 0.154876, 0.154876, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 63.0
+offset_top = 277.0
+offset_right = 330.0
+offset_bottom = -63.0
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_e1vwi")
+text = "Play"
+
+[node name="Options" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_e1vwi")
+text = "Options"
+
+[node name="Quit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_e1vwi")
+text = "Quit"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -467.0
+offset_right = 468.0
+offset_bottom = 223.0
+grow_horizontal = 2
+theme = ExtResource("2_e1vwi")
+theme_type_variation = &"HeaderLarge"
+text = "Game Title here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
