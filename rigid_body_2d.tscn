@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://de4riljp5og8y"]
+
+[ext_resource type="Script" path="res://physics_player.gd" id="1_md8e3"]
+[ext_resource type="Texture2D" uid="uid://npag4na8350g" path="res://icon.svg" id="2_pfoqn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8sx4"]
+size = Vector2(128, 128)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_md8e3")
+acceleration = 1000.0
+MAX_SPEED = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n8sx4")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_pfoqn")
+
+[node name="Camera2D" type="Camera2D" parent="."]

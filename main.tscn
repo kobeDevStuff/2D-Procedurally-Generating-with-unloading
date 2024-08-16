@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://damqjjjfb77dr" path="res://TileMap-01.png" id="1_1er33"]
 [ext_resource type="Script" path="res://tilemap.gd" id="1_6lkfa"]
-[ext_resource type="PackedScene" uid="uid://bi4ncv3exokwp" path="res://player.tscn" id="2_vxjj2"]
+[ext_resource type="PackedScene" uid="uid://de4riljp5og8y" path="res://rigid_body_2d.tscn" id="3_431tv"]
 [ext_resource type="PackedScene" uid="uid://bk0nfo5btjpxm" path="res://pause_menu.tscn" id="4_r58qe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnfb1"]
@@ -31,13 +31,14 @@ sources/0 = SubResource("TileSetAtlasSource_lnfb1")
 
 [node name="WORLD" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." node_paths=PackedStringArray("player")]
 tile_set = SubResource("TileSet_xb6wt")
 rendering_quadrant_size = 64
 format = 2
 script = ExtResource("1_6lkfa")
+player = NodePath("../RigidBody2D")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_vxjj2")]
+[node name="RigidBody2D" parent="." instance=ExtResource("3_431tv")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

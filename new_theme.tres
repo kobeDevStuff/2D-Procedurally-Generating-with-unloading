@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dg5txggifsmba"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgjmv"]
+
+[resource]
+Button/colors/font_color = Color(0.114897, 0.114897, 0.114897, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_wgjmv")
+HeaderLarge/font_sizes/font_size = 90
+Label/colors/font_color = Color(1, 1, 1, 1)
