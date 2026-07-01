@@ -1,6 +1,7 @@
 extends Control
 @onready var optionsMenu = preload("res://options_menu.tscn")
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	$AnimationPlayer.play("RESET")
 
 func resume():
